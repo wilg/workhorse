@@ -10,3 +10,4 @@ Read and follow the workflow defined in `COMMIT.md` in the same directory as thi
 ## Claude Code specifics
 
 - Use **AskUserQuestion** to clarify commit scope when ambiguous — which logical change, include/exclude borderline files, staging vs drafting vs full commit.
+- If Claude Code is in a read-only or planning mode, switch back to an execution-capable mode before staging or committing.

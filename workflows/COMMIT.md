@@ -12,7 +12,7 @@ If the user asks only for a message draft, do not stage, renormalize, or otherwi
 
 ## Clarify Scope
 
-If the requested commit scope is ambiguous, use your harness's interactive question tool to ask one short question before staging or committing.
+If the requested commit scope is ambiguous, use your harness's interactive question feature when available; otherwise ask one short in-chat question before staging or committing.
 
 Use it for real choice points such as:
 - which logical change to commit

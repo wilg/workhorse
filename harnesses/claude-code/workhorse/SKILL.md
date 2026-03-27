@@ -11,7 +11,8 @@ Read and follow the workflow defined in `WORKHORSE.md` in the same directory as 
 
 ## Claude Code specifics
 
-- Use **AskUserQuestion** to present choices interactively — which item to work on, which approach to take, whether to promote an idea, plan approval. Don't make the user type when a multiple-choice works.
-- Use **Explore subagents** for codebase research when picking up items. Write findings to the item file, keep verbose output out of the main conversation.
-- Use **general-purpose subagents** for deeper cross-cutting investigation.
+- Use **AskUserQuestion** for discrete approvals or scope choices — which item to work on, which approach to take, whether to promote an idea, plan approval. Keep it to one short multiple-choice question when possible.
+- Start in **Plan mode** for large or ambiguous items, then switch to an execution-capable mode after the user approves the approach.
+- Use built-in **Explore** and **general-purpose** subagents for codebase research and deeper cross-cutting investigation so verbose work stays out of the main conversation.
+- Use Claude Code's wider tool surface when it materially helps: **MCP** or connectors for external context, and **Chrome/Desktop browser tools** for UI verification if they are available in the current surface.
 - Don't over-use subagents for simple tasks. Read files directly when you know what you're looking for.

@@ -17,7 +17,7 @@ Read `.workhorse/BOARD.md` at the start of every invocation to understand curren
 ## How You Work
 
 **Research before implementing.** When picking up an item or starting new work:
-1. Scan the relevant codebase area (use subagents to keep verbose output out of chat)
+1. Scan the relevant codebase area (use subagents or your harness's equivalent context-isolation tools to keep verbose output out of chat when available)
 2. Write findings into the item's Research section
 3. Present a plan in chat and **wait for approval**
 4. Only then start implementing
@@ -26,7 +26,7 @@ Read `.workhorse/BOARD.md` at the start of every invocation to understand curren
 
 **Be conversational.** The user talks naturally. They say "let's work on the dialogue system" or "add an idea for drone cameras" or "what's next?" and you figure out the intent. There are no subcommands to learn or remember.
 
-**Ask interactive questions.** When you need the user's input — which item to work on, which approach to take, whether to promote an idea — use your harness's interactive question feature (e.g. AskUserQuestion in Claude Code) to present clear choices. Don't make the user type long answers when a multiple-choice would do.
+**Ask interactively when you can.** When you need the user's input — which item to work on, which approach to take, whether to promote an idea — use your harness's interactive question feature when available (for example, AskUserQuestion in Claude Code). If your harness doesn't offer a dedicated question UI, ask a short, concrete question in chat and present clear choices. Don't make the user type long answers when a multiple-choice would do.
 
 **Maintain living documents.** Item files get *rewritten* as understanding evolves. The plan reflects what we know NOW and what's left. Check off completed steps. Refine research as you learn more. Remove things that become irrelevant. Git history preserves everything — files always reflect current truth.
 
@@ -121,7 +121,7 @@ Lessons learned that apply across work items.
 1. **Read the item file** (or create one if promoting from Ideas or new work).
 2. **Research** — Scan the relevant codebase. Update the Research section.
 3. **Plan** — Update the Plan section with concrete steps. Present in chat.
-4. **Ask for approval** — Use interactive questions to confirm the approach. Do not implement until approved.
+4. **Ask for approval** — Use the harness's approval flow to confirm the approach: interactive question UI when available, otherwise a short approval question in chat. Do not implement until approved.
 5. **Implement** — Work through the plan. Check off steps. Commit code + item updates together.
 6. **Update the board** — Move between status groups as appropriate.
 
@@ -147,7 +147,7 @@ When the user references an item or says "let's keep working on X":
 - **"Let's plan X" / "promote X"** — Create item file, add to Backlog with link, remove from Ideas.
 - **"New item: X"** — Create item file, add to Backlog.
 
-When promoting an idea or creating a new item, ask the user to describe what it is and what "done" looks like. Use interactive questions to clarify scope if the description is vague.
+When promoting an idea or creating a new item, ask the user to describe what it is and what "done" looks like. Use the harness's question UI when available, otherwise ask a short in-chat clarification if the description is vague.
 
 ## Commit Practices
 
