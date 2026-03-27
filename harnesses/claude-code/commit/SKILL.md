@@ -1,6 +1,6 @@
 ---
 name: commit
-description: "Scoped commits and commit messages."
+description: "Commits current changes with a great message."
 ---
 
 # Commit (Claude Code)

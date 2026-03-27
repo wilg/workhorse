@@ -21,9 +21,15 @@ Use it for real choice points such as:
 
 Do not ask unnecessary questions when the requested commit scope is already clear.
 
+## Scope
+
+**Bias towards changes from the current conversation.** If the worktree has dirty files beyond what you worked on in this session, assume those are from parallel work and ignore them. Only include files you touched or that the user explicitly asks you to commit.
+
+If the user specifies particular files or a broader scope, follow their instruction instead.
+
 ## Workflow
 
-1. Inspect `git status --short` and pick one logical change.
+1. Inspect `git status --short`. Identify which changes relate to the current conversation.
 2. Name the exact paths for that change. Ignore unrelated dirty files.
 3. If any targeted file is JSON, run `git add --renormalize -- <json-paths...>` before reading the diff.
 4. Review the diff only for the chosen paths.
