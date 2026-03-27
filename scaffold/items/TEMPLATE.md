@@ -7,7 +7,10 @@ What this is and why it matters. Updated as understanding deepens.
 None
 
 ## Plan
-- [ ] First step
+- [ ] First major area
+  - [ ] Sub-step
+  - [ ] Sub-step
+- [ ] Second major area
 
 Key files: `path/to/relevant/file`
 

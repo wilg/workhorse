@@ -75,10 +75,14 @@ Or "None" if no prerequisites.
 
 ## Plan
 Current plan. Always reflects what we know NOW and what's left.
+Nest freely — use sub-items to break big work into branches.
 
 - [x] Completed step
-- [ ] Next step
-- [ ] Future step
+- [ ] A larger piece of work
+  - [x] Sub-step that's done
+  - [ ] Sub-step remaining
+    - [ ] Even deeper detail if needed
+- [ ] Another top-level step
 
 Key files: `Path/To/Relevant/File.cpp`, `Another/File.h`
 
@@ -94,7 +98,7 @@ Rewritten as understanding evolves — not appended.
 ```
 
 - **Prereqs** link to other item files: `[slug](slug.md)`
-- **Plan** checkboxes reflect actual progress — check them off as work completes
+- **Plan** uses nested checkboxes to decompose work into a tree. Top-level items are major branches; sub-items break those down as deep as needed. Check items off as work completes — a parent is checked when all its children are done.
 - **Research** is rewritten, not appended — current understanding only
 - **Decisions** capture the *why*, not just the *what*
 - **Open Questions** get removed when answered (answer goes to Decisions or Plan)
@@ -120,9 +124,9 @@ Lessons learned that apply across work items.
 
 1. **Read the item file** (or create one if promoting from Ideas or new work).
 2. **Research** — Scan the relevant codebase. Update the Research section.
-3. **Plan** — Update the Plan section with concrete steps. Present in chat.
-4. **Ask for approval** — Use the harness's approval flow to confirm the approach: interactive question UI when available, otherwise a short approval question in chat. Do not implement until approved.
-5. **Implement** — Work through the plan. Check off steps. Commit code + item updates together.
+3. **Plan** — Update the Plan section with concrete steps. For large items, build a nested tree — top-level items are major branches, sub-items break those down. Present the plan in chat.
+4. **Ask for approval** — Use the harness's approval flow to confirm the approach: interactive question UI when available, otherwise a short approval question in chat. For large plans, approve the top-level structure first, then detail each branch as you reach it. Do not implement until approved.
+5. **Implement** — Work through the plan one branch at a time. Check off steps as you go — check a parent when all its children are done. Commit code + item updates together.
 6. **Update the board** — Move between status groups as appropriate.
 
 ## Workflow: Completing an Item

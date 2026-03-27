@@ -12,6 +12,7 @@ Read and follow the workflow defined in `WORKHORSE.md` in the same directory as 
 ## Cursor specifics
 
 - Use Cursor's **clarifying questions** for approvals or scope choices; keep questions concise, and present numbered options when there are discrete choices.
+- For large items with nested plans, present the top-level structure for approval first. Detail and implement one branch at a time — don't try to fully plan every branch upfront.
 - Prefer **Ask mode** for read-only codebase understanding. Use **Plan Mode** (`Shift+Tab`) for larger items that need a reviewable implementation plan before edits — plans are stored at `.cursor/plans/` and persist across sessions.
 - Use `@codebase` for semantic search during the Research phase. Use `@file` to inject specific files as context and `@Docs` for third-party documentation lookups. Combine semantic search with **Grep** for exact pattern matching.
 - Delegate to **parallel subagents** for independent research tasks (e.g., scanning multiple codebase areas simultaneously). Each subagent gets its own context and can use a separate model.

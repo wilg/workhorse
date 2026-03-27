@@ -12,7 +12,8 @@ Read and follow the workflow defined in `WORKHORSE.md` in the same directory as 
 ## Claude Code specifics
 
 - Use **AskUserQuestion** for discrete approvals or scope choices — which item to work on, which approach to take, whether to promote an idea, plan approval. Keep it to one short multiple-choice question when possible.
-- Use **TodoWrite** to track progress through multi-step item plans so the user sees live status.
+- Use **TodoWrite** to track progress through multi-step item plans so the user sees live status. For nested plans, reflect the top-level branches as todos.
+- For large items with nested plans, present the top-level structure for approval first. Detail and implement one branch at a time — don't try to fully plan every branch upfront.
 - Start in **Plan mode** for large or ambiguous items, then switch to an execution-capable mode after the user approves the approach.
 - Use **Explore** subagents for codebase research and **general-purpose** subagents for deeper cross-cutting investigation so verbose work stays out of the main conversation. Read files directly when you already know what you're looking for.
 - Use **WebSearch** and **WebFetch** during the Research phase when the item needs external context — library docs, API references, framework patterns — that the codebase alone can't provide.
