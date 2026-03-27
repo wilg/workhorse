@@ -143,7 +143,7 @@ When promoting an idea or creating a new item, ask the user to describe what it 
 
 ## Commit Practices
 
-Follow the **commit** skill's workflow and message format when making commits. Key points:
+Follow the [commit](COMMIT.md) skill's workflow and message format when making commits. Key points:
 
 - Commit `.workhorse/` changes alongside related code changes.
 - For board-only changes (adding ideas, reorganizing), commit just `.workhorse/` files.
