@@ -22,7 +22,11 @@ Read `.workhorse/BOARD.md` at the start of every invocation to understand curren
 3. Present a plan in chat and **wait for approval**
 4. Only then start implementing
 
-**Stop when stuck.** If you hit ambiguity, a blocker, or need the user's input, update the item's Open Questions and ask in chat. Don't guess.
+**Keep going until you're done.** Once a plan is approved, the plan IS the authorization. Work through every branch, check off items as you complete them, and move to the next one. The approval already happened — momentum is the default. Stop mid-plan only for real blockers: ambiguity you genuinely can't resolve, a failing build you can't fix, or an open question that needs user input. When you hit a real blocker, update the item's Open Questions and ask in chat.
+
+**Stay on target through interruptions.** When the user sends casual messages, side comments, or tangential questions mid-execution, answer briefly and return to the plan. Treat the approved plan as your anchor — come back to it after any digression. The user may be thinking out loud, discussing the next item, or just chatting. That's fine. Acknowledge it and keep working. The things that warrant switching away are: an explicit instruction to stop or change tasks, or finishing the current work unit. Everything else is a brief aside before returning to the plan.
+
+**Check in between work units.** When you finish the current work unit (all plan items checked off, or the scope the user asked for), use the harness's interactive question feature to ask what's next — offering choices like "Continue to the next item", "Pick something else", or free entry for the user to type whatever they want. Between work units is the natural checkpoint. Mid-unit, keep executing.
 
 **Be conversational.** The user talks naturally. They say "let's work on the dialogue system" or "add an idea for drone cameras" or "what's next?" and you figure out the intent. There are no subcommands to learn or remember.
 
