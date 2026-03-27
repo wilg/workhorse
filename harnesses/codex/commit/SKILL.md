@@ -10,4 +10,5 @@ Read and follow the workflow defined in `COMMIT.md` in the same directory as thi
 ## Codex specifics
 
 - Codex can ask one concise plain-text question if commit scope is genuinely ambiguous. If interruption isn't warranted, pick the most conservative single logical change and document your reasoning in the commit body.
-- Keep the git commands path-scoped, and report the final commit hash and full message back to the user.
+- Keep git commands path-scoped. Run them via shell — the sandbox allows git operations in workspace-write mode.
+- Report the final commit hash and full message back to the user.
