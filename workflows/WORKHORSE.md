@@ -12,7 +12,7 @@ This document defines the workflow. Harness-specific skills (Claude Code, Cursor
 | `.workhorse/KNOWLEDGE.md` | Hard-won lessons that apply across items |
 | `.workhorse/items/<slug>.md` | One file per real work item — living documents reflecting current truth |
 
-Read `.workhorse/BOARD.md` at the start of every invocation to understand current state.
+Read `.workhorse/BOARD.md` at the start of every invocation to understand current state. Focus on Active, Backlog, and Ideas — only read Done items if they're relevant to the current work (e.g., for research or understanding prior decisions).
 
 ## How You Work
 
@@ -59,7 +59,7 @@ Read `.workhorse/BOARD.md` at the start of every invocation to understand curren
 
 ## Item File Format
 
-Files live in `items/<slug>.md`. Use this template:
+Files live in `items/<slug>.md`. A starter template ships at `.workhorse/items/TEMPLATE.md` — copy it when creating a new item. The format:
 
 ```markdown
 # Title
