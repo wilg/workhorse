@@ -7,7 +7,7 @@ description: "Track work items, ideas, and progress."
 
 Start by reading `.workhorse/BOARD.md` in the project root to understand current state.
 
-Read and follow the workflow defined in `WORKHORSE.md` in the same directory as this file.
+Read and follow the workflow defined in `WORKHORSE.md` in this skill's base directory (the directory containing this SKILL.md file — NOT the project's `.workhorse/` directory).
 
 ## Codex specifics
 

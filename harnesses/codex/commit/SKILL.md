@@ -5,7 +5,7 @@ description: "Commits current changes with a great message."
 
 # Commit (Codex)
 
-Read and follow the workflow defined in `COMMIT.md` in the same directory as this file.
+Read and follow the workflow defined in `COMMIT.md` in this skill's base directory (the directory containing this SKILL.md file).
 
 ## Codex specifics
 
