@@ -58,15 +58,17 @@ MIT
 
 ### 1. Clone the repo
 
+Pick a location and clone:
+
 ```bash
 git clone https://github.com/wilg/workhorse.git ~/Code/workhorse
 ```
 
-If `~/Code/workhorse` already exists, `git pull` to update instead.
+If the repo already exists at the chosen path, `git pull` to update instead. Remember the path you used — you'll need it for symlinks below.
 
 ### 2. Initialize `.workhorse/` in the current project
 
-Copy the scaffold into the project root:
+Copy the scaffold into the project root (substitute the clone path if different):
 
 ```bash
 cp -r ~/Code/workhorse/scaffold .workhorse
@@ -87,42 +89,42 @@ git add .workhorse && git commit -m "workhorse: initialize board"
 
 Detect which harness you are and symlink the matching skill directories into the **user-level** skills path. Each skill directory is self-contained (SKILL.md + symlinked workflow doc).
 
+In the examples below, `$WORKHORSE` is the path where you cloned the repo (e.g. `~/Code/workhorse`).
+
 #### Claude Code
 
 ```bash
 mkdir -p ~/.claude/skills
-ln -sf ~/Code/workhorse/harnesses/claude-code/workhorse ~/.claude/skills/workhorse
-ln -sf ~/Code/workhorse/harnesses/claude-code/commit ~/.claude/skills/commit
+ln -sf $WORKHORSE/harnesses/claude-code/workhorse ~/.claude/skills/workhorse
+ln -sf $WORKHORSE/harnesses/claude-code/commit ~/.claude/skills/commit
 ```
 
 #### Cursor
 
 ```bash
 mkdir -p ~/.cursor/skills
-ln -sf ~/Code/workhorse/harnesses/cursor/workhorse ~/.cursor/skills/workhorse
-ln -sf ~/Code/workhorse/harnesses/cursor/commit ~/.cursor/skills/commit
+ln -sf $WORKHORSE/harnesses/cursor/workhorse ~/.cursor/skills/workhorse
+ln -sf $WORKHORSE/harnesses/cursor/commit ~/.cursor/skills/commit
 ```
 
 #### Codex
 
 ```bash
 mkdir -p ~/.codex/skills
-ln -sf ~/Code/workhorse/harnesses/codex/workhorse ~/.codex/skills/workhorse
-ln -sf ~/Code/workhorse/harnesses/codex/commit ~/.codex/skills/commit
+ln -sf $WORKHORSE/harnesses/codex/workhorse ~/.codex/skills/workhorse
+ln -sf $WORKHORSE/harnesses/codex/commit ~/.codex/skills/commit
 ```
 
 If the user-level skills directory already has `workhorse` or `commit` entries, remove them first and replace with the new symlinks.
 
 ### 4. Verify
 
-Confirm the symlinks resolve:
+Confirm the symlinks resolve (adjust the path for your harness):
 
 ```bash
-cat ~/.claude/skills/workhorse/WORKHORSE.md | head -1
+head -1 ~/.claude/skills/workhorse/WORKHORSE.md
 # Should print: # Workhorse
 ```
-
-(Adjust the path for your harness.)
 
 ### 5. Done
 

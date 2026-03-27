@@ -5,7 +5,9 @@ description: "Track work items, ideas, and progress."
 
 # Workhorse (Claude Code)
 
-Read and follow the workflow defined in `WORKHORSE.md` (bundled in this skill directory).
+Start by reading `.workhorse/BOARD.md` in the project root to understand current state.
+
+Read and follow the workflow defined in `WORKHORSE.md` in the same directory as this file.
 
 ## Claude Code specifics
 

@@ -44,6 +44,7 @@ If the user specifies particular files or a broader scope, follow their instruct
 - Do not amend or rewrite history unless the user asks.
 - Do not commit unrelated user changes, generated artifacts, secrets, or machine-local paths.
 - Behavior changes need tests.
+- If `.workhorse/` exists and has changes related to the code being committed (item updates, board moves, knowledge), include them in the same commit.
 
 ## Staging Rules
 
