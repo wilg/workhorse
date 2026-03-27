@@ -1,11 +1,11 @@
 ---
 name: workhorse
-description: "Lightweight work tracker. State lives in .workhorse/ markdown files. Use when the user wants to track work, add ideas, check status, plan features, pick up tasks, or discuss what to work on next. Triggers on 'let's work on', 'what's next', 'add an idea', 'status', or references to known work items."
+description: "Track work items, ideas, and progress."
 ---
 
 # Workhorse (Cursor)
 
-Read and follow the workflow defined in `.workhorse/WORKHORSE.md`.
+Read and follow the workflow defined in `WORKHORSE.md` (bundled in this skill directory).
 
 ## Cursor specifics
 
