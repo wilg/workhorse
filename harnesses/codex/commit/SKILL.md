@@ -3,7 +3,7 @@ name: commit
 description: "Scoped commits and commit messages."
 ---
 
-# Commit It (Codex)
+# Commit (Codex)
 
 Read and follow the workflow defined in `COMMIT.md` (bundled in this skill directory).
 

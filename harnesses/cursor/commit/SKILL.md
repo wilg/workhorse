@@ -3,7 +3,7 @@ name: commit
 description: "Scoped commits and commit messages."
 ---
 
-# Commit It (Cursor)
+# Commit (Cursor)
 
 Read and follow the workflow defined in `COMMIT.md` (bundled in this skill directory).
 

@@ -1,12 +1,12 @@
-# Commit It
+# Commit
 
-Use only when the user explicitly asks to commit, stage, or write a commit message.
+When invoked with no further instruction, create a commit.
 
 ## Match The Ask
 
+- If invoked with no arguments or just "commit" — create a commit.
 - If the user asks only for a commit message, draft the message and stop.
 - If the user asks to stage but not commit, stage only the requested paths.
-- If the user asks to commit, create the commit.
 
 If the user asks only for a message draft, do not stage, renormalize, or otherwise change the worktree.
 
