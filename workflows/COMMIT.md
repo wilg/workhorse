@@ -90,4 +90,6 @@ Body:
 - no step-by-step narration of the diff
 - if the reasoning is non-obvious, say it plainly
 
+After committing, output the commit hash and the full commit message so the user can see what was written.
+
 When drafting a message without committing, return the subject and body as plain text.
