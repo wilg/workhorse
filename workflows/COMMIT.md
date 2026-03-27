@@ -33,8 +33,7 @@ If the user specifies particular files or a broader scope, follow their instruct
 2. Name the exact paths for that change. Ignore unrelated dirty files.
 3. If any targeted file is JSON, run `git add --renormalize -- <json-paths...>` before reading the diff.
 4. Review the diff only for the chosen paths.
-5. If the repo has relevant tests for the touched area, run them before committing. If the request is only for a message draft, skip validation.
-6. Commit with explicit paths and a real message body.
+5. Commit with explicit paths and a real message body.
 
 ## Guardrails
 
@@ -48,33 +47,33 @@ If the user specifies particular files or a broader scope, follow their instruct
 
 ## Staging Rules
 
-- Prefer `git commit -- <tracked-paths...> -m ...` when every path already exists in git.
-- `git commit <paths>` does not stage new untracked files. If the commit includes new files, stage only those explicit paths immediately before commit, in the same shell command, then commit the full path list.
+- Prefer `git commit -m "..." -- <tracked-paths...>` when every path already exists in git.
+- `git commit -- <paths>` does not stage new untracked files. If the commit includes new files, stage only those explicit paths immediately before commit, in the same shell command, then commit the full path list.
 - Keep every staging command path-scoped. Never widen the scope to the whole repo.
 
 Example for tracked files only:
 
 ```bash
-git commit -- path/to/file1 path/to/file2 -m "$(cat <<'EOF'
+git commit -m "$(cat <<'EOF'
 Update scene board filters
 
 Tighten the filter logic so archived scenes stop appearing in active views.
 This keeps the board aligned with the chapter workflow and removes noise.
 EOF
-)"
+)" -- path/to/file1 path/to/file2
 ```
 
 Example when new files are included:
 
 ```bash
 git add -- path/to/new-file.md && \
-git commit -- path/to/new-file.md path/to/existing-file.md -m "$(cat <<'EOF'
+git commit -m "$(cat <<'EOF'
 Add tea house reference note
 
 Capture the new reference note and wire it into the existing scene doc so
 the research is committed as one scoped change.
 EOF
-)"
+)" -- path/to/new-file.md path/to/existing-file.md
 ```
 
 ## Message Format
