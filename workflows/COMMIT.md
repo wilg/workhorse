@@ -31,9 +31,22 @@ If the user specifies particular files or a broader scope, follow their instruct
 
 1. Inspect `git status --short`. Identify which changes relate to the current conversation.
 2. Name the exact paths for that change. Ignore unrelated dirty files.
-3. If any targeted file is JSON, run `git add --renormalize -- <json-paths...>` before reading the diff.
-4. Review the diff only for the chosen paths.
-5. Commit with explicit paths and a real message body.
+3. Review the scoped change cheaply first with `git diff --name-status -- <paths...>` and `git diff --stat -- <paths...>`.
+4. If any targeted file is JSON, run `git add --renormalize -- <json-paths...>` before reviewing or committing it.
+5. Read full diffs only when needed: ambiguous scope, code behavior changes, generated/secret-like files, surprisingly large stats, or anything you did not edit yourself.
+6. Commit with explicit paths and a real message body.
+
+## Fast Path
+
+When the scope is obvious and the change is docs, instructions, tests, comments, deletion of a known file, or a small same-session edit, do not read every line of the full diff. The safe minimum is:
+
+1. `git status --short`
+2. `git diff --name-status -- <paths...>`
+3. `git diff --stat -- <paths...>`
+4. `git diff --check -- <paths...>` for tracked text/code paths when practical
+5. path-scoped commit
+
+Do not start broad test or lint runs from this skill unless the user asked for them, the change affects runtime behavior, or no recent relevant verification exists. If checks are skipped, say so plainly after the commit.
 
 ## Guardrails
 
@@ -44,6 +57,7 @@ If the user specifies particular files or a broader scope, follow their instruct
 - Do not commit unrelated user changes, generated artifacts, secrets, or machine-local paths.
 - Behavior changes need tests.
 - If `.workhorse/` exists and has changes related to the code being committed (item updates, board moves, knowledge), include them in the same commit.
+- Never commit without at least status plus name-status/stat review for the exact paths being committed.
 
 ## Staging Rules
 
