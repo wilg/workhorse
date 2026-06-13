@@ -52,7 +52,3 @@ Or verify this repository exposes the expected skills:
 ```bash
 npx skills add wilg/workhorse --list
 ```
-
-## Legacy manual install
-
-The harness-specific directories under `harnesses/` are kept for manual symlink installs and backwards compatibility. Prefer `npx skills add` for new installs.
