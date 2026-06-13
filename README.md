@@ -1,6 +1,6 @@
 # Workhorse
 
-Shared skills for AI coding agents that work across harnesses (Claude Code, Cursor, Codex).
+Shared skills for AI coding agents that work across harnesses (Claude Code, Cursor, Codex, and other agents supported by `npx skills`).
 
 **Skills included:**
 
@@ -10,11 +10,23 @@ Shared skills for AI coding agents that work across harnesses (Claude Code, Curs
 
 ## Setup
 
-Ask your AI coding agent:
+Install with the standard agent skills CLI:
 
-> Install workhorse from https://github.com/wilg/workhorse
+```bash
+npx skills add wilg/workhorse -g --skill '*'
+```
 
-That's it. The agent will read the install instructions below and set everything up.
+To install only for one agent, pass `--agent`, for example:
+
+```bash
+npx skills add wilg/workhorse -g --skill '*' --agent codex
+```
+
+Then ask your AI coding agent to initialize Workhorse in a project:
+
+> Initialize workhorse here
+
+The agent will create `.workhorse/` from the scaffold bundled with the installed skill.
 
 ## How it works
 

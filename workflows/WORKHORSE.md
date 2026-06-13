@@ -2,7 +2,7 @@
 
 Workhorse is a lightweight work tracker. State lives in `.workhorse/` in the project root as clean, always-up-to-date markdown files browsable on GitHub.
 
-This document defines the workflow. Harness-specific skills (Claude Code, Cursor, etc.) are thin wrappers that point here.
+This document defines the workflow. Skill packages and harness-specific wrappers are thin entry points that point here.
 
 ## Core Files
 
