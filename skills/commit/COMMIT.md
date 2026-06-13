@@ -4,7 +4,7 @@ When invoked with no further instruction, create a commit.
 
 ## Match The Ask
 
-- If invoked with no arguments or just "commit" — create a commit.
+- If invoked with no arguments or just "commit" - create a commit.
 - If the user asks only for a commit message, draft the message and stop.
 - If the user asks to stage but not commit, stage only the requested paths.
 

@@ -2,79 +2,53 @@
 
 **You are an AI coding agent installing Workhorse. Follow these steps.**
 
-### 1. Clone the repo
+## 1. Install the skills
 
-Pick a location and clone:
-
-```bash
-git clone https://github.com/wilg/workhorse.git ~/Code/workhorse
-```
-
-If the repo already exists at the chosen path, `git pull` to update instead. Remember the path you used — you'll need it for symlinks below.
-
-### 2. Initialize `.workhorse/` in the current project
-
-Copy the scaffold into the project root (substitute the clone path if different):
+Use the standard agent skills CLI:
 
 ```bash
-cp -r ~/Code/workhorse/scaffold .workhorse
+npx skills add wilg/workhorse -g --skill '*'
 ```
 
-This creates:
-- `.workhorse/BOARD.md` — empty board
-- `.workhorse/KNOWLEDGE.md` — empty knowledge file
-- `.workhorse/items/` — where item files go
-
-Commit it:
+If the user wants to install only for a specific agent, include `--agent`:
 
 ```bash
-git add .workhorse && git commit -m "workhorse: initialize board"
+npx skills add wilg/workhorse -g --skill '*' --agent codex
+npx skills add wilg/workhorse -g --skill '*' --agent claude-code
+npx skills add wilg/workhorse -g --skill '*' --agent cursor
 ```
 
-### 3. Install skill symlinks
+This installs the public skills from `skills/`:
 
-Detect which harness you are and symlink the matching skill directories into the **user-level** skills path. Each skill directory is self-contained (SKILL.md + symlinked workflow doc).
+- `workhorse`
+- `commit`
+- `scour`
 
-In the examples below, `$WORKHORSE` is the path where you cloned the repo (e.g. `~/Code/workhorse`).
+## 2. Initialize `.workhorse/` in the current project
 
-#### Claude Code
+After installation, the `workhorse` skill includes a `scaffold/` directory. When the user asks to initialize Workhorse in a project, create:
+
+- `.workhorse/BOARD.md` from `scaffold/BOARD.md`
+- `.workhorse/KNOWLEDGE.md` from `scaffold/KNOWLEDGE.md`
+- `.workhorse/items/TEMPLATE.md` from `scaffold/items/TEMPLATE.md`
+
+Commit the scaffold when the user wants the project to start tracking work:
 
 ```bash
-mkdir -p ~/.claude/skills
-ln -sf $WORKHORSE/harnesses/claude-code/workhorse ~/.claude/skills/workhorse
-ln -sf $WORKHORSE/harnesses/claude-code/commit ~/.claude/skills/commit
-ln -sf $WORKHORSE/harnesses/claude-code/scour ~/.claude/skills/scour
+git add .workhorse/BOARD.md .workhorse/KNOWLEDGE.md .workhorse/items/TEMPLATE.md
+git commit -m "workhorse: initialize board" -- .workhorse/BOARD.md .workhorse/KNOWLEDGE.md .workhorse/items/TEMPLATE.md
 ```
 
-#### Cursor
+## 3. Verify
+
+List installed skills:
 
 ```bash
-mkdir -p ~/.cursor/skills
-ln -sf $WORKHORSE/harnesses/cursor/workhorse ~/.cursor/skills/workhorse
-ln -sf $WORKHORSE/harnesses/cursor/commit ~/.cursor/skills/commit
-ln -sf $WORKHORSE/harnesses/cursor/scour ~/.cursor/skills/scour
+npx skills list
 ```
 
-#### Codex
+Or verify this repository exposes the expected skills:
 
 ```bash
-mkdir -p ~/.codex/skills
-ln -sf $WORKHORSE/harnesses/codex/workhorse ~/.codex/skills/workhorse
-ln -sf $WORKHORSE/harnesses/codex/commit ~/.codex/skills/commit
-ln -sf $WORKHORSE/harnesses/codex/scour ~/.codex/skills/scour
+npx skills add wilg/workhorse --list
 ```
-
-If the user-level skills directory already has `workhorse`, `commit`, or `scour` entries, remove them first and replace with the new symlinks.
-
-### 4. Verify
-
-Confirm the symlinks resolve (adjust the path for your harness):
-
-```bash
-head -1 ~/.claude/skills/workhorse/WORKHORSE.md
-# Should print: # Workhorse
-```
-
-### 5. Done
-
-Tell the user the skills are installed and available in all projects on this machine. Each project just needs its own `.workhorse/` directory (step 2) to start tracking work.

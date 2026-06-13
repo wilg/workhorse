@@ -1,6 +1,6 @@
 # Workhorse
 
-Shared skills for AI coding agents that work across harnesses (Claude Code, Cursor, Codex).
+Shared skills for AI coding agents that install through the standard `npx skills` CLI.
 
 **Skills included:**
 
@@ -10,11 +10,23 @@ Shared skills for AI coding agents that work across harnesses (Claude Code, Curs
 
 ## Setup
 
-Ask your AI coding agent:
+Install with the standard agent skills CLI:
 
-> Install workhorse from https://github.com/wilg/workhorse
+```bash
+npx skills add wilg/workhorse -g --skill '*'
+```
 
-That's it. The agent will read the install instructions below and set everything up.
+To install only for one agent, pass `--agent`, for example:
+
+```bash
+npx skills add wilg/workhorse -g --skill '*' --agent codex
+```
+
+Then ask your AI coding agent to initialize Workhorse in a project:
+
+> Initialize workhorse here
+
+The agent will create `.workhorse/` from the scaffold bundled with the installed skill.
 
 ## How it works
 
@@ -47,13 +59,13 @@ When you start a new conversation and say "where were we?", the agent reads the 
 - "Scour perf for the dashboard"
 - "Scour UX review checkout"
 
-## Workflow docs
+## Skill packages
 
-The harness-agnostic workflow documents define how each skill works:
+Each skill is self-contained under `skills/` so `npx skills add` can install it directly:
 
-- [workhorse workflow](workflows/WORKHORSE.md) — Board format, item file format, knowledge capture, how research/plan/implement works
-- [commit workflow](workflows/COMMIT.md) — Staging rules, message format, guardrails
-- [scour workflow](workflows/SCOUR.md) — Long-running review loop, PR rules, and optional scope/lens arguments
+- [workhorse](skills/workhorse/SKILL.md) — Includes the workflow doc and project scaffold
+- [commit](skills/commit/SKILL.md) — Includes the commit workflow and guardrails
+- [scour](skills/scour/SKILL.md) — Includes the long-running review loop and PR rules
 
 ## License
 
