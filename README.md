@@ -6,6 +6,7 @@ Shared skills for AI coding agents that work across harnesses (Claude Code, Curs
 
 - **workhorse** — Track work items, ideas, and progress in browsable markdown files checked into your repo. Context survives across conversations. The agent researches before implementing, asks when stuck, and commits as it goes.
 - **commit** — Scoped, high-quality commits. One logical change per commit, never pushes.
+- **scour** — Long-running codebase sweeps for latent bugs or a requested lens like UX, performance, security, accessibility, tests, or reliability. Opens ready PRs for obvious fixes.
 
 ## Setup
 
@@ -39,12 +40,20 @@ When you start a new conversation and say "where were we?", the agent reads the 
 - "Draft a commit message"
 - "Stage just the test changes"
 
+### Scouring
+
+- "Scour the codebase for latent bugs"
+- "Scour auth redirects"
+- "Scour perf for the dashboard"
+- "Scour UX review checkout"
+
 ## Workflow docs
 
 The harness-agnostic workflow documents define how each skill works:
 
 - [workhorse workflow](workflows/WORKHORSE.md) — Board format, item file format, knowledge capture, how research/plan/implement works
 - [commit workflow](workflows/COMMIT.md) — Staging rules, message format, guardrails
+- [scour workflow](workflows/SCOUR.md) — Long-running review loop, PR rules, and optional scope/lens arguments
 
 ## License
 

@@ -43,6 +43,7 @@ In the examples below, `$WORKHORSE` is the path where you cloned the repo (e.g. 
 mkdir -p ~/.claude/skills
 ln -sf $WORKHORSE/harnesses/claude-code/workhorse ~/.claude/skills/workhorse
 ln -sf $WORKHORSE/harnesses/claude-code/commit ~/.claude/skills/commit
+ln -sf $WORKHORSE/harnesses/claude-code/scour ~/.claude/skills/scour
 ```
 
 #### Cursor
@@ -51,6 +52,7 @@ ln -sf $WORKHORSE/harnesses/claude-code/commit ~/.claude/skills/commit
 mkdir -p ~/.cursor/skills
 ln -sf $WORKHORSE/harnesses/cursor/workhorse ~/.cursor/skills/workhorse
 ln -sf $WORKHORSE/harnesses/cursor/commit ~/.cursor/skills/commit
+ln -sf $WORKHORSE/harnesses/cursor/scour ~/.cursor/skills/scour
 ```
 
 #### Codex
@@ -59,9 +61,10 @@ ln -sf $WORKHORSE/harnesses/cursor/commit ~/.cursor/skills/commit
 mkdir -p ~/.codex/skills
 ln -sf $WORKHORSE/harnesses/codex/workhorse ~/.codex/skills/workhorse
 ln -sf $WORKHORSE/harnesses/codex/commit ~/.codex/skills/commit
+ln -sf $WORKHORSE/harnesses/codex/scour ~/.codex/skills/scour
 ```
 
-If the user-level skills directory already has `workhorse` or `commit` entries, remove them first and replace with the new symlinks.
+If the user-level skills directory already has `workhorse`, `commit`, or `scour` entries, remove them first and replace with the new symlinks.
 
 ### 4. Verify
 
