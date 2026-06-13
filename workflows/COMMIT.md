@@ -56,7 +56,6 @@ Do not start broad test or lint runs from this skill unless the user asked for t
 - Do not amend or rewrite history unless the user asks.
 - Do not commit unrelated user changes, generated artifacts, secrets, or machine-local paths.
 - Behavior changes need tests.
-- If `.workhorse/` exists and has changes related to the code being committed (item updates, board moves, knowledge), include them in the same commit.
 - Never commit without at least status plus name-status/stat review for the exact paths being committed.
 
 ## Staging Rules
